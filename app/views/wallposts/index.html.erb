@@ -1,29 +1,20 @@
-<h1>Listing wallposts</h1>
+<div class="page-header">
+  <h1>My Wall</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Content</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% @wallposts.each do |wallpost| %>
+  <div class="mini-layout">
+    <div class="mini-layout-body">
+    <strong><%= wallpost.name %></strong>
+    <p><%= wallpost.content %></p>
+      <div class="meta"> 
+        <%= link_to time_ago_in_words(wallpost.created_at) + " ago", wallpost %> 
+          <span class="admin">
+          | <%= link_to "Edit", edit_wallpost_path(wallpost) %> |
+           <%= link_to "Delete", wallpost,  method: :delete, data: { confirm: "Are you sure?" } %>
+          </span>
+      </div>
+    </div>
+  </div>
+<% end %>
 
-  <tbody>
-    <% @wallposts.each do |wallpost| %>
-      <tr>
-        <td><%= wallpost.name %></td>
-        <td><%= wallpost.content %></td>
-        <td><%= link_to 'Show', wallpost %></td>
-        <td><%= link_to 'Edit', edit_wallpost_path(wallpost) %></td>
-        <td><%= link_to 'Destroy', wallpost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Wallpost', new_wallpost_path %>
