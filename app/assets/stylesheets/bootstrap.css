@@ -1072,6 +1072,7 @@ textarea {
 
 label {
   display: block;
+  margin-top: 15px;
   margin-bottom: 5px;
 }
 
