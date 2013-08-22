@@ -1,6 +1,11 @@
 Mybook::Application.routes.draw do
+  devise_for :models
+
+  devise_for :users, :controllers => {:registrations => "users/registrations"}
   resources :wallposts
 
+
+  root :to => "wallposts#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

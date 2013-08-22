@@ -10,7 +10,7 @@
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<a class="brand" href="/wallposts">Wall Posts</a>
+			<a class="brand" href="#">Wall Posts</a>
 			<ul class="nav">
 				<li><%= link_to "My Wall", wallposts_path %></li>
 				<li><%= link_to "New Post", new_wallpost_path %></li>
@@ -19,6 +19,9 @@
 	</div>
 </div>
 <div class="container">
+	   <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
 	<%= yield %>
 </div>
 </body>
