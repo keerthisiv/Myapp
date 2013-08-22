@@ -1,14 +1,13 @@
+
 <div class="page-header">
   <h1>My Wall</h1>
 </div>
-<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+
 
 <% @wallposts.each do |wallpost| %>
   <div class="mini-layout">
     <div class="mini-layout-body">
-    <strong><%= wallpost.name %></strong>
+    <strong><%= wallpost.user.profile_name %></strong>
     <p><%= wallpost.content %></p>
       <div class="meta"> 
         <%= link_to time_ago_in_words(wallpost.created_at) + " ago", wallpost %> 

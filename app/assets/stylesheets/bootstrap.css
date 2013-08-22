@@ -284,6 +284,7 @@ a:focus {
   float: left;
   min-height: 1px;
   margin-left: 20px;
+  margin-top: 20px;
 }
 
 .container,
@@ -1892,9 +1893,9 @@ input.search-query {
 .form-horizontal .input-append {
   display: inline-block;
   *display: inline;
-  margin-bottom: 0;
+  margin-bottom: 0px;
   vertical-align: middle;
-  *zoom: 1;
+  *zoom: 1
 }
 
 .form-search .hide,
@@ -1989,10 +1990,8 @@ legend + .control-group {
 .form-horizontal .input-prepend + .help-block,
 .form-horizontal .input-append + .help-block {
   margin-top: 10px;
-}
-
-.form-horizontal .form-actions {
-  padding-left: 180px;
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
 
 table {

@@ -69,6 +69,6 @@ class WallpostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wallpost_params
-      params.require(:wallpost).permit(:name, :content)
+      params.require(:wallpost).permit(:name, :content, :user_id)
     end
 end
