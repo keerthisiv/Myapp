@@ -1,7 +1,12 @@
-
-<p>
-  <%= @wallpost.content %>
-</p>
-
+<% if @wallpost.user %>
+	<h4><%= @wallpost.user.full_name %></h4>
+	<p>
+	  <%= @wallpost.content %>
+	</p>
+<% else %>
+	<p>
+	  <%= @wallpost.content %>
+	</p>
+<% end %>
 <%= link_to 'Edit', edit_wallpost_path(@wallpost) %> |
 <%= link_to 'Back', wallposts_path %>

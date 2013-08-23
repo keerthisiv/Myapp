@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   
   validates :profile_name, presence: true,
   						 uniqueness: true,
-  						 format: { with: /\A[a-zA-Z\-\_]+\Z/ }
+  						 format: { with: /\A[a-zA-Z\-\_]+\Z/, 
+                      message: "should have no spaces" }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
