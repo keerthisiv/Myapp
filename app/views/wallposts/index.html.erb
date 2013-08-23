@@ -6,15 +6,22 @@
 
 <% @wallposts.each do |wallpost| %>
   <div class="mini-layout">
-    <div class="mini-layout-body">
-    <strong><%= wallpost.user.profile_name %></strong>
-    <p><%= wallpost.content %></p>
-      <div class="meta"> 
-        <%= link_to time_ago_in_words(wallpost.created_at) + " ago", wallpost %> 
-          <span class="admin">
-          | <%= link_to "Edit", edit_wallpost_path(wallpost) %> |
-           <%= link_to "Delete", wallpost,  method: :delete, data: { confirm: "Are you sure?" } %>
-          </span>
+    <div class="row">
+      <div class="span1">
+        <%= image_tag wallpost.user.gravatar_url %>
+      </div>
+      <div class="span7">
+        <div class="mini-layout-body">
+          <strong><%= wallpost.user.profile_name %></strong>
+          <p><%= wallpost.content %></p>
+            <div class="meta"> 
+              <%= link_to time_ago_in_words(wallpost.created_at) + " ago", wallpost %> 
+                <span class="admin">
+                | <%= link_to "Edit", edit_wallpost_path(wallpost) %> |
+                 <%= link_to "Delete", wallpost,  method: :delete, data: { confirm: "Are you sure?" } %>
+                </span>
+            </div>
+        </div>
       </div>
     </div>
   </div>
