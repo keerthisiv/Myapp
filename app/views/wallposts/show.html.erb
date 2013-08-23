@@ -1,12 +1,15 @@
-<% if @wallpost.user %>
-	<h4><%= @wallpost.user.full_name %></h4>
+<div class="row">
+  	<div class="span1">
+        <%= image_tag @wallpost.user.gravatar_url %>
+	</div>
+	<div class="span4">
+		<h3><%= @wallpost.user.full_name %></h3>
+	</div>
+</div>
+<div class="span1">
+</div>
 	<p>
-	  <%= @wallpost.content %>
+	<%= @wallpost.content %>
 	</p>
-<% else %>
-	<p>
-	  <%= @wallpost.content %>
-	</p>
-<% end %>
-<%= link_to 'Edit', edit_wallpost_path(@wallpost) %> |
+
 <%= link_to 'Back', wallposts_path %>

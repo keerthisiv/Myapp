@@ -24,7 +24,7 @@ class WallpostsController < ApplicationController
   # POST /wallposts
   # POST /wallposts.json
   def create
-    @wallpost = Wallpost.new(wallpost_params)
+    @wallpost = current_user.wallposts.new(wallpost_params)
 
     respond_to do |format|
       if @wallpost.save
