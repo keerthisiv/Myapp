@@ -11,8 +11,8 @@
       </ul>
     </div>
   <% end %>
-    <%= f.input :content %>
- 
+  
+  <%= f.input :content, html: {textarea: "10"} %>
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-primary" %>
   </div>
