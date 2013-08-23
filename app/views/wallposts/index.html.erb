@@ -6,13 +6,7 @@
 
 <% @wallposts.each do |wallpost| %>
   <div class="mini-layout">
-    <div class="row">
-      <div class="span1">
-        <%= image_tag wallpost.user.gravatar_url %>
-      </div>
-      <div class="span7">
         <div class="mini-layout-body">
-          <strong><%= wallpost.user.profile_name %></strong>
           <p><%= wallpost.content %></p>
             <div class="meta"> 
               <%= link_to time_ago_in_words(wallpost.created_at) + " ago", wallpost %> 
@@ -23,7 +17,5 @@
             </div>
         </div>
       </div>
-    </div>
-  </div>
 <% end %>
 
