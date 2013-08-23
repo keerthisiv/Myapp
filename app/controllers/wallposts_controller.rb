@@ -1,10 +1,10 @@
 class WallpostsController < ApplicationController
   before_action :set_wallpost, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!, only: [:new]
   # GET /wallposts
   # GET /wallposts.json
   def index
-    @wallposts = Wallpost.all
+    @wallposts = Wallpost.all.reverse
   end
 
   # GET /wallposts/1

@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h1><%= @user.full_name %></h1>
+</div>
+
+<% @myposts.each do |post| %>
+<div class="mini-layout">
+    <div class="mini-layout-body">
+		<p><%= post.content %></p><br />
+		<%= link_to time_ago_in_words(post.created_at) + " ago", post %>
+		 <span class="admin">
+          | <%= link_to "Edit", edit_wallpost_path(post) %></span>
+	</div>
+</div>
+<% end %>

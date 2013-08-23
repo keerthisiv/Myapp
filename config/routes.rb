@@ -1,9 +1,16 @@
 Mybook::Application.routes.draw do
-  devise_for :models
+
+  devise_scope :user do
+    get 'login', to: 'devise/sessions#new', as: :login
+    get 'register', to: 'devise/registrations#new', as: :register
+  end
+
+  get 'my_wall', to: 'my_wall#show', as: :my_wall
+
 
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   resources :wallposts
-
+  get 'wall', to: "wallposts#index", as: :wall
 
   root :to => "wallposts#index"
   # The priority is based upon order of creation: first created -> highest priority.
