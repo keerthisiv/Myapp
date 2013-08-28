@@ -1,14 +1,14 @@
-
-<div class="page-header">
-  <h1>Wall</h1>
+<div class="jumbotron subhead"> 
+  <div class="page-header">
+    <h1>Wall</h1>
+  </div>
 </div>
-
 
 <% @wallposts.each do |wallpost| %>
   <div class="mini-layout">
     <div class="row">
       <div class="span1">
-        <%= image_tag wallpost.user.gravatar_url %>
+     <%=link_to image_tag(wallpost.user.gravatar_url), wallpost %>
       </div>
       <div class="span10">
         <div class="mini-layout-body">
