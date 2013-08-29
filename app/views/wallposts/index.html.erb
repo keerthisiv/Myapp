@@ -17,7 +17,10 @@
             <div class="meta"> 
               <%= link_to time_ago_in_words(wallpost.created_at) + " ago", wallpost %> 
                 <span class="admin">
-                 | <%= link_to "Delete", wallpost,  method: :delete, data: { confirm: "Are you sure?" } %>
+                  <% if user_signed_in? && current_user.first_name == "keerthi" %>
+                     | <%= link_to "Delete", wallpost,  method: :delete, data: { confirm: "Are you sure?" } %>
+                 <% else %>
+                  <% end %>
                 </span>
             </div>
         </div>

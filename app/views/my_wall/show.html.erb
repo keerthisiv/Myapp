@@ -16,7 +16,8 @@
 		<p><%= post.content %></p><br />
 		<%= link_to time_ago_in_words(post.created_at) + " ago", post %>
 		 <span class="admin">
-          | <%= link_to "Edit", edit_wallpost_path(post) %></span>
+          | <%= link_to "Edit", edit_wallpost_path(post), class: "btn btn-info" %>
+          | <%= link_to "Delete", post,  method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></span>
 	</div>
 </div>
 <% end %>
